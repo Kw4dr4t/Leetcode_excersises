@@ -1,0 +1,11 @@
+class Solution:
+    def intersect(self, nums1, nums2):
+        freq1 = Counter(nums1)
+
+        result = []
+        for i, num in enumerate(nums2):
+            if num in freq1 and freq1[num] > 0:
+                freq1[num] -= 1
+                result.append(num)
+
+        return result
